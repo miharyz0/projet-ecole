@@ -19,7 +19,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class DaoEleve {
-    Connection conn;
+    public static Connection conn;
     
     public DaoEleve() throws ClassNotFoundException, SQLException
     {
@@ -131,8 +131,18 @@ public class DaoEleve {
         
     }
     
-    public static String getSequenceId(Object obj){
+    public String getSequenceId(Object obj) throws SQLException{
         String nameOfClass = obj.getClass().getSimpleName();
-        String id = "nameOfClass+"."+nameOfClass
+        String id = nameOfClass+"Seq";
+        Statement stmt = null;
+        ResultSet rs = null;
+        String seqId = "";
+        
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("select nextval('"+id+"') ");
+            while(rs.next()){
+                seqId = rs.getString(1);
+            }
+        return seqId;
     }
 }

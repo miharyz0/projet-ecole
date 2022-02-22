@@ -8,13 +8,21 @@ package Modele;
  *
  * @author Keeevv
  */
+
+import DAOModele.*;
+import Conn.*;
+import DaoModele.DaoEleve;
+import java.sql.SQLException;
+
 public class Test {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        Eleve jean=new Eleve();
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        DaoEleve daoEl = new DaoEleve();
+        Eleve jean = new Eleve(daoEl.getSequenceId(new Eleve()), "rakoto", "Jean", "5");
+        daoEl.create(jean);
         
     }
     

@@ -130,4 +130,9 @@ public class DaoEleve {
     {
         
     }
+    
+    public static String getSequenceId(Object obj){
+        String nameOfClass = obj.getClass().getSimpleName();
+        String id = "nameOfClass+"."+nameOfClass
+    }
 }

@@ -1,1 +1,1 @@
-<% response.sendRedirect("./web/login.jsp"); %>
+<% response.sendRedirect("web/login.jsp"); %>

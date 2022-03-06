@@ -22,16 +22,9 @@
 <div id="wrapper">
     <%@include file="./web/inc/sidebar.jsp" %>
 
+    <% String path = "./web/" + request.getParameter("action") + ".jsp";%>
+    <jsp:include page="<%=path%>" />
 
-    <% if (request.getParameter("action").equals("newAnneeScolaire")) { %>
-    <%@include file="./web/newAnneeScolaire.jsp" %>
-    <% } else if (request.getParameter("action").equals("paiements")) { %>
-    <%@include file="./web/paiements.jsp" %>
-    <% } else if (request.getParameter("action").equals("note")) { %>
-    <%@include file="./web/note.jsp" %>
-    <% } else {%>
-    <%@include file="./web/newEtudiant.jsp" %>
-    <% }%>
 
 </div>
 

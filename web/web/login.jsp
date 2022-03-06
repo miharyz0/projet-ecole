@@ -34,7 +34,7 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Connexion</h1>
                             </div>
-                            <form class="user" action="../page.jsp">
+                            <form class="user" action="../page.jsp?action=liste">
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user"
                                            id="email" aria-describedby="emailHelp"

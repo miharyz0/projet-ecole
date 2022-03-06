@@ -17,7 +17,7 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
 
-    <%@include file="./web/inc/sidebar.jsp" %>
+    <jsp:include page="./web/inc/sidebar.jsp" />
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -29,7 +29,10 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <%@include file="./web/liste.jsp" %>
+
+                <% String path = "./web/" + request.getParameter("action") + ".jsp";%>
+                <jsp:include page="<%=path%>" />
+
             </div>
             <!-- /.container-fluid -->
 

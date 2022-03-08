@@ -38,11 +38,11 @@
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user"
                                            id="email" aria-describedby="emailHelp"
-                                           placeholder="Email" required>
+                                           placeholder="Email"  name="email" required>
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control form-control-user"
-                                           id="password" placeholder="Mot de passe" required>
+                                           id="password" placeholder="Mot de passe" name="mdp" required>
                                 </div>
                                 <hr>
                                 <div class="form-group">

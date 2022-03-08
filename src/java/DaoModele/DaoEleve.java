@@ -19,7 +19,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class DaoEleve {
-    public static Connection conn;
+    Connection conn;
     
     public DaoEleve() throws ClassNotFoundException, SQLException
     {

@@ -141,7 +141,7 @@ public class DaoProf {
             Prof p = new Prof();
         try {
             stmt = this.conn.createStatement();
-            rs = stmt.executeQuery("SELECT * FROM "+profs.getClass().getSimpleName()+"WHERE email ="+email+"AND mdp = "+mdp+";");
+            rs = stmt.executeQuery("SELECT * FROM "+profs.getClass().getSimpleName()+" WHERE email = "+email+" AND mdp = "+mdp+" ; ");
             while(rs.next()){
                 profs.setid(rs.getString("id"));
                 profs.setnom(rs.getString("nom"));

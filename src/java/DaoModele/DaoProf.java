@@ -17,6 +17,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DaoProf {
     Connection conn;
@@ -128,5 +130,29 @@ public class DaoProf {
     public void delete()
     {
         
+    }
+    
+    public Prof login(String email, String mdp){
+         ArrayList<Prof> listeProf = new ArrayList<Prof>();
+            Statement stmt = null;
+            ResultSet rs = null;
+            Prof profs = new Prof();
+            int taille = 0;
+            Prof p = new Prof();
+        try {
+            stmt = this.conn.createStatement();
+            rs = stmt.executeQuery("SELECT * FROM "+profs.getClass().getSimpleName()+"WHERE email ="+email+"AND mdp = "+mdp+";");
+            while(rs.next()){
+                profs.setid(rs.getString("id"));
+                profs.setnom(rs.getString("nom"));
+                profs.setemail(rs.getString("email"));
+                profs.setmdp(rs.getString("mdp"));
+                listeProf.add(profs);
+            }
+            p  = listeProf.get(1);
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoProf.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return p;
     }
 }

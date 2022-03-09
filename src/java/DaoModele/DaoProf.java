@@ -141,7 +141,7 @@ public class DaoProf {
             Prof p = new Prof();
         try {
             stmt = this.conn.createStatement();
-            rs = stmt.executeQuery("SELECT * FROM "+profs.getClass().getSimpleName()+" WHERE email = "+email+" AND mdp = "+mdp+" ; ");
+            rs = stmt.executeQuery("SELECT * FROM "+profs.getClass().getSimpleName()+" WHERE email = '"+email+"' AND mdp = '"+mdp+"'");
             while(rs.next()){
                 profs.setid(rs.getString("id"));
                 profs.setnom(rs.getString("nom"));
@@ -149,7 +149,7 @@ public class DaoProf {
                 profs.setmdp(rs.getString("mdp"));
                 listeProf.add(profs);
             }
-            p  = listeProf.get(1);
+            p  = listeProf.get(0);
         } catch (SQLException ex) {
             Logger.getLogger(DaoProf.class.getName()).log(Level.SEVERE, null, ex);
         }

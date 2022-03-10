@@ -1,8 +1,8 @@
 <% 
     
-DaoProf d = new DaoProf();
-Prof p = d.login("rakoto@gmail.com", "1234profRakoto");
-       out.println(prof.getnom());
+//DaoProf d = new DaoProf();
+//Prof p = d.login("rakoto@gmail.com", "1234profRakoto");
+//       out.println(prof.getnom());
 %>
 <!DOCTYPE html>
 <html lang="en">
